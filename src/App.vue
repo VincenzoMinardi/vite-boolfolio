@@ -2,10 +2,12 @@
 
 import ProjectList from "./components/Projectlist.vue"
 
+
 export default {
   components: {
 
-    ProjectList
+    ProjectList,
+
   },
 };
 
@@ -14,7 +16,7 @@ export default {
 
 <template>
   <h1 class="text-center mt-2">BoolPrees</h1>
-  <h2>Questi sono i miei progetti fatti con Boolean Anno 2023</h2>
+  <h2 class="text-center">Questi sono i miei progetti fatti con Boolean Anno 2023</h2>
   <projectList />
 </template>
 

@@ -1,11 +1,11 @@
-<script setup>
+<script>
+import Projectlist from "./Projectlist.vue";
+
 
 </script>
 
 <template>
-  <div class="containe">
-    <h1 class="text-center">Boolprees</h1>
-  </div>
+  <projectlist />
 </template>
 
 <style lang="scss">

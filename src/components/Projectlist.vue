@@ -9,30 +9,38 @@ export default {
     data() {
         return {
             ArrProjects: [],
-
+            currentPage: 1,
+            nPages: 0,
         };
     },
-
-
-
-
-
     created() {
-        axios
-            .get('http://localhost:8000/api/projects', {
-                params: {
-                    page: this.last_page,
-                }
-
-            })
-            .then(response => {
-                this.ArrProjects = response.data.data;
-                this.nPages = response.data.last_page;
-
-            });
+        this.pageProject();
     },
+    methods: {
+
+        changePage(page) {
+            this.currentPage = page;
+            this.pageProject();
+        },
+
+        pageProject() {
+
+            axios
+                .get('http://localhost:8000/api/projects', {
+                    params: {
+                        page: this.currentPage,
+                    }
+                })
+                .then(response => {
+                    this.ArrProjects = response.data.data;
+                    this.nPages = response.data.last_page;
+                })
+
+        }
+    }
 };
 </script>
+
 
 
 
@@ -44,19 +52,18 @@ export default {
 
     <nav>
         <ul class="pagination">
-            <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                </a>
+            <li class="page-item disabled">
+                <a class="page-link">Previous</a>
             </li>
-            <li v-for="Page in nPages" :key="Page" class="page-item" :class="{ active: page == activePage }"><a
-                    class="page-link" href="#">{{ page }}</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
+
+            <li v-for="page in nPages" :key="page" class="page-item" :class="{ active: page == currentPage }">
+                <span class="page-link" @click="changePage(page)">
+                    {{ page }}
+                </span>
+            </li>
+
             <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                </a>
+                <a class="page-link" href="#">Next</a>
             </li>
         </ul>
     </nav>

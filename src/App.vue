@@ -1,10 +1,14 @@
 <script>
-import ProjectList from './components/ProjectList.vue';
+
+import AppNav from './components/AppNav.vue';
+import AppFooter from './components/AppFooter.vue';
 
 export default {
 
   components: {
-    ProjectList
+
+    AppNav,
+    AppFooter,
   }
 };
 </script>
@@ -17,12 +21,11 @@ export default {
 
 
 <template>
+  <AppNav />
   <div class="container">
     <router-view></router-view>
-    <ProjectList />
-
-
   </div>
+  <AppFooter />
 </template>
 
 

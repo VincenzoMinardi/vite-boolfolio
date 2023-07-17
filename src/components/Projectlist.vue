@@ -6,13 +6,14 @@ import { store } from '../store';
 export default {
     components: {
         ProjectCard,
-        store
+
     },
     data() {
         return {
             ArrProjects: [],
             currentPage: 1,
             nPages: 0,
+            store,
         };
     },
     created() {

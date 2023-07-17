@@ -53,7 +53,7 @@ export default {
         <ProjectCard v-for="project in ArrProjects" :key="project.id" :project="project" />
     </div>
 
-    <nav>
+    <nav class="mt-4">
         <ul class="pagination">
             <li class="page-item disabled">
                 <a class="page-link">Previous</a>

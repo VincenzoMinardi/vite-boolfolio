@@ -1,6 +1,6 @@
 <script>
 
-import ProjectList from "./components/Projectlist.vue"
+import ProjectList from './components/Projectlist.vue';
 
 
 export default {

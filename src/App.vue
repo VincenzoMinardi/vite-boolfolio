@@ -1,24 +1,31 @@
 <script>
-
-import ProjectList from './components/Projectlist.vue';
-
+import ProjectList from './components/ProjectList.vue';
 
 export default {
+
   components: {
-
-    ProjectList,
-
-  },
+    ProjectList
+  }
 };
-
-
 </script>
 
+
+
+
+
+
+
+
 <template>
-  <h1 class="text-center mt-2">BoolPrees</h1>
-  <h2 class="text-center">Questi sono i miei progetti fatti con Boolean Anno 2023</h2>
-  <projectList />
+  <div class="container">
+    <router-view></router-view>
+    <ProjectList />
+
+
+  </div>
 </template>
+
+
 
 <style lang="scss">
 @import 'bootstrap/scss/bootstrap';

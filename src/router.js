@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 // Importiamo i componenti che definiscono le varie pagine
 import AppHome from "./pages/AppHome.vue";
 import ProjectsIndex from "./pages/ProjectsIndex.vue";
+import ProjectsShow from "./pages/ProjectsShow.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -16,6 +17,12 @@ const router = createRouter({
       path: "/projects",
       name: "projects.index",
       component: ProjectsIndex,
+    },
+
+    {
+      path: "/projects:show",
+      name: "projects.show",
+      component: ProjectsShow,
     },
   ],
 });

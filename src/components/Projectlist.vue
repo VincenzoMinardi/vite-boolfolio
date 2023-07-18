@@ -27,21 +27,22 @@ export default {
         },
 
         pageProject() {
-
-            axios
-                .get('http://localhost:8000/api/projects', {
-                    params: {
-                        page: this.currentPage,
-                    }
-                })
+            axios.get('http://localhost:8000/api/projects', {
+                params: {
+                    page: this.currentPage,
+                }
+            })
                 .then(response => {
-                    this.ArrProjects = response.data.data;
-                    this.nPages = response.data.last_page;
+                    this.ArrProjects = response.data.results.data;
+                    this.nPages = response.data.results.last_page;
                 })
-
+                .catch(error => {
+                    console.error(error);
+                });
         }
+
     }
-};
+}
 </script>
 
 

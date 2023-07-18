@@ -36,9 +36,7 @@ export default {
                     this.ArrProjects = response.data.data;
                     this.nPages = response.data.last_page;
                 })
-                .catch(error => {
-                    console.error(error);
-                });
+
         }
 
     }

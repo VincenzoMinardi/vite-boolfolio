@@ -34,6 +34,9 @@ export default {
             <h5>{{ project.name }}</h5>
             <h5>{{ project.surname }}</h5>
             <p class="card-text">{{ project.description }}</p>
+            <router-link :to="{ name: 'projects.show', params: { project: project } }"
+                class="btn btn-primary mt-auto">View</router-link>
+
         </div>
     </div>
 </template>

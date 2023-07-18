@@ -33,8 +33,8 @@ export default {
                 }
             })
                 .then(response => {
-                    this.ArrProjects = response.data.results.data;
-                    this.nPages = response.data.results.last_page;
+                    this.ArrProjects = response.data.data;
+                    this.nPages = response.data.last_page;
                 })
                 .catch(error => {
                     console.error(error);

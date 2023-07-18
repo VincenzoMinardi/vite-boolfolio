@@ -1,7 +1,7 @@
 <script>
 import axios from 'axios';
 import { store } from '../store';
-import { DateTime } from 'luxon';
+// import { DateTime } from 'luxon';
 
 
 export default {
@@ -9,7 +9,7 @@ export default {
     data() {
         return {
             store,
-            luxon: DateTime,
+            // luxon: DateTime,
         };
     },
 
@@ -28,7 +28,7 @@ export default {
 
 <template>
     <h1>{{ project.title }}</h1>
-    <h2>Last modified: {{ this.luxon.now().toFormat('dd/MM/yyyy') }}</h2>
+    <!-- <h2>Last modified: {{ this.luxon.now().toFormat('dd/MM/yyyy') }}</h2> -->
     <img :src="store.getImageUrl(project.image)" :alt="project.title" />
     <p>{{ project.description }}</p>
 </template>

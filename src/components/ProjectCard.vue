@@ -31,14 +31,26 @@ export default {
         <div class="card-body">
             <h3 class="card-title">{{ project.title }}</h3>
             <h5>{{ project.date }}</h5>
-            <h5>{{ project.name }}</h5>
-            <h5>{{ project.surname }}</h5>
+            <h5>{{ project.name }} {{ project.surname }}</h5>
+
+            <!-- Assuming ArrTechnology and ArrType are arrays of objects -->
+            <div v-for="technology in ArrTechnology" :key="technology.technology">
+                <h5>{{ technology.technology }}</h5>
+            </div>
+
+            <div v-for="(type, index) in ArrType" :key="index">
+                <h5>{{ type.type }}</h5>
+                <h5>{{ type.collabs }}</h5>
+            </div>
+
+
             <p class="card-text">{{ project.description }}</p>
-            <router-link :to="{ name: 'projects.show', params: { project: project.id } }"
+            <router-link :to="{ name: 'projects.show', params: { project_id: project.id } }"
                 class="btn btn-primary mt-auto">View</router-link>
         </div>
     </div>
 </template>
+  
 
 <style lang="scss"></style>
 

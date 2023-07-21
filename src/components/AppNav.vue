@@ -1,6 +1,11 @@
 <script>
 export default {
 
+    data() {
+        return {
+            searchString: '',
+        };
+    },
 }
 </script>
 
@@ -27,9 +32,18 @@ export default {
                             HomePage
                         </router-link>
                     </li>
-
-
                 </ul>
+                <form class="d-flex" role="search" @submit.prevent="
+                    $router.push({
+                        name: 'projects.index',
+                        query: { name: searchString }
+                    })">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                        v-model="searchString">
+                    <button class="btn btn-outline-success" type="submit">
+                        Search
+                    </button>
+                </form>
             </div>
         </div>
     </nav>

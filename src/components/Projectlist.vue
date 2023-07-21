@@ -10,6 +10,8 @@ export default {
     },
     data() {
         return {
+            arrType: [],
+            arrTechnology: [],
             ArrProjects: [],
             currentPage: 1,
             nPages: 0,
@@ -33,6 +35,8 @@ export default {
                 }
             })
                 .then(response => {
+                    this.arrTechnology = response.data.data;
+                    this.arrType = response.data.data;
                     this.ArrProjects = response.data.data;
                     this.nPages = response.data.last_page;
                 })
